@@ -1,10 +1,16 @@
+// Schemas 
+const contactSchema = require('../models/contactSchema');
 
-const helloShuaib = (req, res) => {
-    res.status(200).json({"Message":"Hello Shuaib"});
-}
+const contactForm = (req, res) => {
+    const formData = req.body;
+    console.log(formData);
 
-const helloFarooq = (req, res) => {
-    res.status(200).json({"Message": "Hello Farooq"});
-}
+    // Respond to the client
+    res.json({ message: req.body});
+};
 
-module.exports = {helloShuaib, helloFarooq};
+const test = (req, res) => {
+    res.send('hi')
+};
+
+module.exports = {test,contactForm};
