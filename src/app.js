@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 require('./DBConn/__db');
 const bodyParser = require('body-parser');
-const UserRoutes = require("./routes/User");
+const UserRoutes = require("./routes/routes");
 const cors = require('cors');
 
 // Initialize Express app
@@ -22,9 +22,6 @@ app.use('/api', UserRoutes);
 const PORT = process.env.PORT || 8000;
 
 
-
 app.listen(PORT, () => {
     console.log(`Server start at port no ${PORT}`);
 })
-
-
