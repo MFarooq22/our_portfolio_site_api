@@ -10,8 +10,8 @@ const cors = require('cors');
 const app = express();
 
 // middlewares
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());         // to avoid cors errors
 

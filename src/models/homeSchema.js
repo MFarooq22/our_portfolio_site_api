@@ -22,7 +22,8 @@ const homeSchema = new mongoose.Schema({
     resumeLink: String,
     address: [
         {
-            age: String,
+            title: String,
+            value : String
         }
     ]
 

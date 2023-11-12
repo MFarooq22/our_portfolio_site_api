@@ -10,5 +10,4 @@ const upload = require('../uploadFile');
 router.route('/contact').post(contactForm);
 router.route('/menu').post(menu);
 router.post('/home', upload.single('image'), createHome)
-
 module.exports = router;
