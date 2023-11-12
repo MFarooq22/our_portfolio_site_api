@@ -3,13 +3,14 @@ const HomeSchema = require('../models/homeSchema');
 
 const createHome = async (req, res) => {
 try {
+    const socialLinks = req.body.socialLinks.map((socialLink) => ({
+        title: socialLink.title,
+        link: socialLink.link
+      }));
     const homeData = {
         name : req.body.name,
         // image : req.file.filename,
-        socialLinks : [
-            {facebook : req.body.facebook},
-            {instagram : req.body.instagram},
-        ],
+        socialLinks : socialLinks,
         skills : req.body.skills,
         aboutMe : req.body.aboutMe,
         resumeLink : req.body.resumeLink,
