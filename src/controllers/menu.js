@@ -1,5 +1,5 @@
 const menuSchema = require('../models/menuSchema');
-const multer = require('multer');   // multer use for sending image to db 
+const multer = require('multer');   // multer use for sending image to db
 const fs = require('fs');
 
 // Multer configuration
@@ -13,7 +13,7 @@ const upload = multer({
 }).single('logoImage');
 
 
-// Logo and menu 
+// Logo and menu
 const menu =  (req, res) => {
     try {
         // Use the upload middleware to handle file upload
@@ -39,7 +39,7 @@ const menu =  (req, res) => {
                         link: menuData.menuItems.url[index],
                     }));
 
-                    // save the updated document 
+                    // save the updated document
                     await existingMenu.save();
                     res.status(200).json('Menu uploaded successfully.');
                 } else {
@@ -52,8 +52,8 @@ const menu =  (req, res) => {
                         })),
                     });
 
-                    // save the updated document 
-                    await newMenu.save();
+                    // save the updated document
+                     await newMenu.save();
                     res.status(200).json('Menu uploaded successfully.');
                 }
             }

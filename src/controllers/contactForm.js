@@ -1,11 +1,11 @@
-const contactSchema = require('../models/contactSchema');
+const ContactSchema = require('../models/contactSchema');
 
 
-// contact form 
+// contact form
 const contactForm = async(req, res) => {
     try {
         const formData = req.body;
-        const contact = new contactSchema(formData);
+        const contact = new ContactSchema(formData);
         await contact.save();
         res.status(201).json({ message: 'Form submitted successfully' });
     } catch (error) {
@@ -14,8 +14,6 @@ const contactForm = async(req, res) => {
     }
 };
 
-const test = (req, res) => {
-    res.send('hi');
-};
+
 
 module.exports = {contactForm};
