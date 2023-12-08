@@ -6,14 +6,17 @@ const bodyParser = require('body-parser');
 const UserRoutes = require("./routes/routes");
 const cors = require('cors');
 
+
 // Initialize Express app
 const app = express();
 
+app.use('/public/images', express.static(path.join(__dirname, '../public/images')));
+
 // middlewares
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(cors());         // to avoid cors errors
+app.use(express.json());
 
 app.use('/api', UserRoutes);
 
