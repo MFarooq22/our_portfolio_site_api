@@ -5,12 +5,15 @@ const contactSchema = new mongoose.Schema({
     // Schema for contact page
     name: {
         type: String,
+        required: true,
     },
     email: {
         type: String,
+        required: true,
     },
     message: {
         type: String,
+        required: true
     },
 });
 

@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const menuSchema = new mongoose.Schema({
     logoImage: {
-        data: Buffer,
-        contentType: String,
+        type: String,
     },
 
     menuItems: [
@@ -11,7 +10,7 @@ const menuSchema = new mongoose.Schema({
             title: {
                 type: String,
                 required: true
-            },
+            }, 
             link: {
                 type: String,
                 required: true
