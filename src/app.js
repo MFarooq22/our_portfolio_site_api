@@ -4,6 +4,7 @@ const express = require('express');
 require('./DBConn/__db');
 const bodyParser = require('body-parser');
 const UserRoutes = require("./routes/routes");
+const authRoutes = require('./routes/authRoutes');
 const cors = require('cors');
 const path = require('path');
 
@@ -20,7 +21,7 @@ app.use(cors());         // to avoid cors errors
 app.use(express.json());
 
 app.use('/api', UserRoutes);
-
+app.use('/api/v1/auth', authRoutes);
 
 // Define the port for your server
 const PORT = process.env.PORT || 8000;
